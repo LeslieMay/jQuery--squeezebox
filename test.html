@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="mycss.css" type="text/css">
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="cont first">
+            <div class="con_p">
+                <h1>Awesome</h1>
+            </div>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <div class="nr">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+
+            </div>
+        </div>
+        <div class="cont second">
+            <div class="con_p">
+                <h1>Words</h1>
+            </div>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <div class="nr">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+
+            </div>
+        </div>
+        <div class="cont third">
+            <div class="con_p">
+                <h1>Go</h1>
+            </div>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <div class="nr">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+
+            </div>
+        </div>
+        <div class="cont fourth">
+            <div class="con_p">
+                <h1>Inside</h1>
+            </div>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <div class="nr">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+
+            </div>
+        </div>
+        <div class="cont fifth">
+            <div class="con_p">
+                <h1>Here</h1>
+            </div>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <div class="nr">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function(){
+        var expanded = false;
+        $(".cont").each(function(index){
+            $(this).on("click",function(e){
+                if(!expanded){
+                    $(this).addClass("new-cont");
+                    $(this).children(".con_p").fadeOut();
+                    $(this).children(".nr").css("opacity","1");
+                    $(this).children(".glyphicon").css("opacity","1");
+                    expanded = true;
+                    e.stopPropagation();
+                }
+
+            })
+            $(".glyphicon").on("click",function(e){
+                if(expanded) {
+                    $(this).parent(".cont").addClass("nncont");
+                    $(this).parent(".cont").removeClass("new-cont");
+                    $(this).parent(".cont").children(".con_p").fadeIn();
+                    $(this).parent(".cont").children(".nr").css("opacity","0");
+                    $(this).parent(".cont").children(".glyphicon").css("opacity","0");
+                    $(this).parent(".cont").css("z-index","0");
+                    expanded = false;
+                }
+                e.stopPropagation();
+            })
+        })
+
+    })
+
+</script>
+</html>
